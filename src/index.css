@@ -1,13 +1,50 @@
+/*@font-face {
+    font-family: "Poppins";
+    src: local("Poppins"),
+        url(./fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "PoppinsBlack";
+    src: local("Poppins"),
+        url(./fonts/Poppins/Poppins-Black.ttf) format("truetype");
+}
+@font-face {
+    font-family: "PoppinsBold";
+    src: local("Poppins"),
+        url(./fonts/Poppins/Poppins-Bold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "PoppinsSemiBold";
+    src: local("Poppins"),
+        url(./fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'PoppinsMedium';
+  src: local('Poppins'), url(./fonts/Poppins/Poppins-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'PoppinsLight';
+  src: local('Poppins'), url(./fonts/Poppins/Poppins-Light.ttf) format('truetype');
+}*/
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #6b6dff;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+    }
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }

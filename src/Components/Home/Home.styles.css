@@ -1,0 +1,38 @@
+.logo {
+    color: white;
+    font-family: "PoppinsBlack";
+}
+
+.buttonFont {
+    color: white;
+    font-family: "PoppinsBold";
+}
+.bg-SignUp {
+    background-color: #ffc400;
+}
+
+.bg-SignIn {
+    background-color: #ff6b6b;
+}
+
+#logo {
+    width: 8em;
+}
+
+#main {
+    text-align: center;
+}
+
+#button-container {
+    width: 15em;
+    text-align: center;
+    margin: auto;
+}
+
+.maxwidth {
+    width: 100%;
+}
+
+.forgotPasswordTextFont {
+    font-family: "PoppinsSemiBold";
+}

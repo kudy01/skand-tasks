@@ -1,0 +1,50 @@
+
+body { margin: 30px; }
+.usernameSymbol {
+    position: relative;
+    color: #111;
+    font-size: 18px;
+}
+
+
+.usernameSymbol input { text-indent: 30px;}
+
+.usernameSymbol .fa-at  { 
+  position: absolute;
+  top: 27px;
+  left: 4px;
+  padding: 9px;
+}
+
+
+
+.input-error {
+    color: #d41a1a;
+    font-size: 12px;
+    margin: 4px 0 8px 0;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    text-transform: none;
+}
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    text-transform: none;
+}
+::placeholder {
+    /* Recent browsers */
+    text-transform: none;
+}
+
+.buttonSignUpSignInWidth {
+  width: 100%;
+}

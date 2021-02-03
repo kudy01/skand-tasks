@@ -85,45 +85,46 @@ const UserProfile = () => {
     const [currentSlackUsername, setCurrentSlackUsername] = useState(''); 
     let user = JSON.parse(sessionStorage.getItem('user')); 
 
-    const getId = () => { 
-        const id = fetch('/api/v2/users', 
-            { 
-                method: 'get', 
-                headers: 
-                { 
-                    'Content-Type': 'application/json',
-                     Authorization: localStorage.getItem('token') 
-                } 
-            }) 
-            .then((response) => response.json()) 
-            .then((users) => { 
-                return users.users.filter(data => ( 
-                    data.email === user.email && data.id 
-                    )) 
-            }); 
-            
-            id.then(function(data) { 
-                sessionStorage.setItem('currentId', data[0].id) 
-                fetch(`/api/v2/users/${data[0].id}`, { 
-                    method: 'get', 
-                    headers: { 
-                        'Content-Type': 'application/json', 
-                        'Authorization': localStorage.getItem('token') 
-                    }, 
-                }) 
-                .then(response => response.json()) 
-                .then(response => { 
-                    setCurrentId(response.users.id); 
-                    setCurrentEmail(response.users.email); 
-                    setCurrentFirstName(response.users.first_name); 
-                    setCurrentLastName(response.users.last_name); 
-                    setCurrentJobCount(response.users.jobs_count); 
-                    setCurrentSlackUsername(response.users.slack_username); 
-                }) 
-            }) 
-        } 
 
         useEffect(() => { 
+            let user = JSON.parse(sessionStorage.getItem('user')); 
+            const getId = () => { 
+            const id = fetch('/api/v2/users', 
+                { 
+                    method: 'get', 
+                    headers: 
+                    { 
+                        'Content-Type': 'application/json',
+                         Authorization: localStorage.getItem('token') 
+                    } 
+                }) 
+                .then((response) => response.json()) 
+                .then((users) => { 
+                    return users.users.filter(data => ( 
+                        data.email === user.email && data.id 
+                        )) 
+                }); 
+                
+                id.then(function(data) { 
+                    sessionStorage.setItem('currentId', data[0].id) 
+                    fetch(`/api/v2/users/${data[0].id}`, { 
+                        method: 'get', 
+                        headers: { 
+                            'Content-Type': 'application/json', 
+                            'Authorization': localStorage.getItem('token') 
+                        }, 
+                    }) 
+                    .then(response => response.json()) 
+                    .then(response => { 
+                        setCurrentId(response.users.id); 
+                        setCurrentEmail(response.users.email); 
+                        setCurrentFirstName(response.users.first_name); 
+                        setCurrentLastName(response.users.last_name); 
+                        setCurrentJobCount(response.users.jobs_count); 
+                        setCurrentSlackUsername(response.users.slack_username); 
+                    }) 
+                }) 
+            } 
             getId(); 
         }, []); 
 

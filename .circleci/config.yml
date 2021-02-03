@@ -1,38 +1,28 @@
-# version: 2.1
-# jobs:
-#    build:
-#      docker:
-#        - image: circleci/node:14.10.1
-#      steps:
-#        - checkout
-#        - run: npm install
-#        - run: CI=true npm run build
-#    test:
-#      docker:
-#        - image: circleci/node:14.10.1
-#      steps:
-#        - checkout
-#        - run: npm install
-#        - run: npm run test
-#    hithere:
-#      docker:
-#        - image: circleci/node:14.10.1
-#      steps:
-#        - checkout
-#        - run: echo "Hellloooo!"
-# workflows:
-#   version: 2
-#   build-test-and-lint:
-#     jobs:
-#       - build
-#       - hithere
-#       - test:
-#           requires:
-#             - hithere
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+   build:
+     docker:
+       - image: circleci/node:14.10.1
+     steps:
+       - checkout
+       - run: yarn
+       - run: CI=true yarn run build
+   hithere:
+     docker:
+       - image: circleci/node:14.10.1
+     steps:
+       - checkout
+       - run: echo "Hellloooo!"
 workflows:
-  node-tests:
+  version: 2
+  build-and-lint:
     jobs:
-      - node/test
+      - build
+      - hithere
+# version: 2.1
+# orbs:
+#   node: circleci/node@3.0.0
+# workflows:
+#   node-tests:
+#     jobs:
+#       - node/test

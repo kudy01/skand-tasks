@@ -8,7 +8,7 @@ const SearchBox =({ searchChange, middle }) => {
 	}
 
 	return (
-		<div className={`${middle && 'tc search'} search`}>
+		<div className='tc search'>
 		  <span className="fa fa-search" style={middle ? discoverSearchIcon : null}></span>
 		  <input 
 		  	aria-label='Search by Email'

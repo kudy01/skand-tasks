@@ -78,7 +78,7 @@ const SignUp = (props) => {
     <div className="br3 ba bg-white mv4 w-100 w-50-m w-25-l mw6 shadow-5 center" >
 	    <main className="pa4">
 	    	<div className="measure">
-		      <h1 className="f1 fw6 ph0 mh0 black">Sign Up</h1>
+		      <h1 className="f1 fw6 ph0 mh0 black b">Sign Up</h1>
 		      <form onSubmit={formik.handleSubmit}>
 		        <div className="mt3">
 		          <label className="black">First Name</label>

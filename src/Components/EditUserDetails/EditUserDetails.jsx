@@ -100,7 +100,7 @@ const EditUserDetails = () => {
             <div className="tr mr4">
                 <button 
                     onClick={cancelEditProfile}
-                    className="ml4 tc b no-underline ph3 mb2 pv2 ba b--near-white grow pointer f5 dib bg-white br-pill buttonFont black" 
+                    className="ml4 tc b no-underline ph3 mb2 pv2 ba b--near-white grow pointer f5 dib bg-white br-pill black" 
                   >
                     Cancel
                    </button>
@@ -188,14 +188,14 @@ const EditUserDetails = () => {
                           <div>
                               <button 
                                 type="submit"
-                                className="buttonSignUpSignInWidth tc b no-underline ph3 mb2 pv2 ba b--near-white grow pointer f5 dib bg-SignUp br-pill buttonFont black"
+                                className="buttonSignUpSignInWidth tc b no-underline ph3 mb2 pv2 ba b--near-white grow pointer f5 dib bg-SignUp br-pill black"
                                 onClick={removeTokenOnUpdate} 
                               >
                                 Done
                               </button>
                               <button 
                                 type="submit"
-                                className="buttonSignUpSignInWidth tc b no-underline ph3 mb2 pv2 ba b--near-white grow pointer f5 dib bg-SignIn br-pill buttonFont black"
+                                className="buttonSignUpSignInWidth tc b no-underline ph3 mb2 pv2 ba b--near-white grow pointer f5 dib bg-SignIn br-pill black"
                                 onClick={removeUserProfile} 
                               >
                                 Delete Profile

@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 
-import { searchUsers, requestUsers } from './user/user.reducer';
-import { requestCurrentUser } from './currentUser/currentUser.reducer';
+import data, { setSearchField } from './user/user.reducer';
 
-export default combineReducers({searchUsers, requestUsers, requestCurrentUser})
+export default combineReducers({ data, setSearchField})

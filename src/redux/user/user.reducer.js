@@ -1,17 +1,14 @@
 
-import {
-	CHANGE_SEARCH_FIELD,
-	REQUEST_USERS_PENDING,
-	REQUEST_USERS_SUCCESS,
-	REQUEST_USERS_FAILED
-} from './user.types.js';
-
+ import {
+ 	CHANGE_SEARCH_FIELD,
+ } from './user.types.js';
+import { RECEIVE_API_DATA } from "./user.actions";
 
 const initialStateSearch = {
 	searchField: ''
 }
 
-export const searchUsers = (state = initialStateSearch, action = {}) => {
+export const setSearchField = (state = initialStateSearch, action = {}) => {
 	switch(action.type) {
 		case CHANGE_SEARCH_FIELD:			
 			return {
@@ -23,20 +20,12 @@ export const searchUsers = (state = initialStateSearch, action = {}) => {
 	}
 }
 
-const initialStateUsers = {
-	isPending: false,
-	users: [], 
-	error: ''
-}
-export const requestUsers = (state = initialStateUsers, action = {}) => {
-	switch(action.type) {
-		case REQUEST_USERS_PENDING:
-			return Object.assign({}, state,{ isPending: true })
-		case REQUEST_USERS_SUCCESS:
-			return Object.assign({}, state,{ users: action.payload, isPending: false })
-		case REQUEST_USERS_FAILED:
-			return Object.assign({}, state,{ error: action.payload, isPending: false })
-		default:
-			return state;
-	}
-}
+export default (state = {}, { type, data }) => {
+  switch (type) {
+    case RECEIVE_API_DATA:
+      return data;
+    default:
+      return state;
+  }
+};
+

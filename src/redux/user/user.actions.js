@@ -1,9 +1,6 @@
-import {
+ import {
 	CHANGE_SEARCH_FIELD,
-	REQUEST_USERS_PENDING,
-	REQUEST_USERS_SUCCESS,
-	REQUEST_USERS_FAILED
-} from './user.types.js';
+ } from './user.types.js';
 
 
 export const setSearchField = (text) => {
@@ -12,19 +9,9 @@ export const setSearchField = (text) => {
 		payload: text
 	}
 }
+  
+export const REQUEST_API_DATA = "REQUEST_API_DATA";
+export const RECEIVE_API_DATA = "RECEIVE_API_DATA";
 
-
-export const requestUsers = () => (dispatch) => {
-	dispatch({type: REQUEST_USERS_PENDING})
-	fetch('/api/v2/users', { 
-        method: 'get',
-        headers: {
-            'Content-Type': 'application/json', 
-            Authorization: localStorage.getItem('token')
-          }
-        }) 
-		.then(response =>response.json())
-		.then(users => dispatch({type: REQUEST_USERS_SUCCESS, payload: users.users}))
-		.catch(error => dispatch({type: REQUEST_USERS_FAILED, payload: error}))
-}
-
+export const requestApiData = () => ({ type: REQUEST_API_DATA });
+export const receiveApiData = data => ({ type: RECEIVE_API_DATA, data });
